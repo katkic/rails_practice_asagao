@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Asagao</title>
+    <title><%= page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <%= render 'shared/header' %>
+      </header>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <aside class="sidebar">
+        <%= render 'shared/sidebar' %>
+      </aside><!-- /.sidebar -->
+
+      <footer>
+        <%= render 'shared/footer'  %>
+      </footer>
+    </div><!-- /.container -->
   </body>
 </html>
