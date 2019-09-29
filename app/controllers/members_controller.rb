@@ -5,6 +5,7 @@ class MembersController < ApplicationController
   end
 
   def show
+    @member = Member.find(params[:id])
   end
 
   def new
@@ -20,5 +21,10 @@ class MembersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def search
+    @members = Member.search(params[:q])
+    render 'index'
   end
 end
