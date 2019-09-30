@@ -5,8 +5,7 @@ class Member < ApplicationRecord
 
       if query.present?
         rel = rel.where(
-          'name LIKE ? OR full_name LIKE ?',
-          "%#{query}%", "%#{query}%"
+          'name LIKE ? OR full_name LIKE ?', "%#{query}%", "%#{query}%"
         )
       end
 
